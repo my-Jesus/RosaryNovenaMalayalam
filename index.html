@@ -344,10 +344,12 @@
             html += `<p><strong>1. ജപമാല സമർപ്പണം:</strong> ${getPrayerText('rosaryOffering')}</p>`;
             html += `<div class="litany-section-inline"><h4>2. ദൈവമാതാവിൻ്റെ ലുത്തിനിയ</h4>${getPrayerText('litany')}</div>`;
             html += `<p><strong>3. സർവ്വേശ്വരന്റെ പുണ്യപൂർണ്ണയായ...:</strong> ${getPrayerText('finalPrayer1')}</p>`;
-            html += `<p><strong>4. പ്രാർത്ഥിക്കാം (കർത്താവേ...):</strong> ${getPrayerText('finalPrayer3')}</p>`;
-            html += `<p><strong>5. പരിശുദ്ധ രാജ്ഞീ...:</strong> ${getPrayerText('hailHolyQueen')}</p>`;
-            html += `<p><strong>6. എത്രയും ദയയുള്ള മാതാവേ...:</strong> ${getPrayerText('memorare')}</p>`;
-            html += `<p><strong>7. നൊവേന സമാപന പ്രാർത്ഥന (${phaseKey === 'petition' ? 'അപേക്ഷ' : 'കൃതജ്ഞത'}):</strong> ${getPrayerText(`${mysterySlug}-concluding-${phaseKey}`)}</p>`;
+            html += `<p><strong>4. V/R:</strong> ${getPrayerText('finalPrayer2')}</p>`; // Added V/R back here
+            html += `<p><strong>5. പ്രാർത്ഥിക്കാം (കർത്താവേ...):</strong> ${getPrayerText('finalPrayer3')}</p>`;
+            html += `<p><strong>6. പരിശുദ്ധ രാജ്ഞീ...:</strong> ${getPrayerText('hailHolyQueen')}</p>`;
+            html += `<p><strong>7. V/R:</strong> ${getPrayerText('finalPrayer2')}</p>`; // Added V/R back here
+            html += `<p><strong>8. എത്രയും ദയയുള്ള മാതാവേ...:</strong> ${getPrayerText('memorare')}</p>`;
+            html += `<p><strong>9. നൊവേന സമാപന പ്രാർത്ഥന (${phaseKey === 'petition' ? 'അപേക്ഷ' : 'കൃതജ്ഞത'}):</strong> ${getPrayerText(`${mysterySlug}-concluding-${phaseKey}`)}</p>`;
 
 
             dailyPrayerDisplay.innerHTML = html; // Update the display area

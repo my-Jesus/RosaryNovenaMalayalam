@@ -3,136 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>54 ദിവസത്തെ അത്ഭുതകരമായ ജപമാല നൊവേന</title>
+    <title>54 ദിവസത്തെ അത്ഭുതകരമായ ജപമാല നൊവേന (ദിവസേനയുള്ള പ്രാർത്ഥന)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Apply Inter font globally */
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth; /* Enable smooth scrolling */
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        p, li, h1, h2, h3, h4, summary, button { word-wrap: break-word; overflow-wrap: break-word; }
+        .day-button { transition: all 0.2s ease-in-out; }
+        .day-button.selected { transform: scale(1.05); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5); z-index: 10; }<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>54 ദിവസത്തെ അത്ഭുതകരമായ ജപമാല നൊവേന (ദിവസേനയുള്ള പ്രാർത്ഥന)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        p, li, h1, h2, h3, h4, summary, button { word-wrap: break-word; overflow-wrap: break-word; }
+        .day-button { transition: all 0.2s ease-in-out; }
+        .day-button.selected { transform: scale(1.05); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5); z-index: 10; }
+        #selected-day-info { transition: opacity 0.3s ease-in-out; }
+        #daily-prayer-display { margin-top: 2rem; padding: 1.5rem; border: 1px solid #d1d5db; border-radius: 0.5rem; background-color: #f9fafb; }
+        #daily-prayer-display h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: #1e3a8a; text-align: center; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.5rem; }
+        #daily-prayer-display h4 { font-size: 1.05rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #111827; }
+        #daily-prayer-display h4:first-of-type { margin-top: 0.5rem; }
+        #daily-prayer-display p, #daily-prayer-display li { margin-bottom: 0.75rem; line-height: 1.6; color: #374151; }
+        #daily-prayer-display ol { list-style: none; padding-left: 0; counter-reset: decade-counter; }
+        #daily-prayer-display ol li { border-left: 3px solid #9ca3af; padding-left: 1rem; margin-bottom: 1.5rem; position: relative; }
+        #daily-prayer-display ol li::before { /* Decade numbering */
+            content: counter(decade-counter); counter-increment: decade-counter;
+            position: absolute; left: -0.75rem; top: 0;
+            background-color: #6b7280; color: white;
+            width: 1.5rem; height: 1.5rem; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem; font-weight: bold;
         }
-        /* Style for main details summary */
-        details > summary.main-mystery-summary {
-            cursor: pointer;
-            font-weight: 600;
-            padding: 0.75rem 1rem;
-            background-color: #f3f4f6; /* gray-100 */
-            border-radius: 0.375rem; /* rounded-md */
-            margin-bottom: 0.5rem;
-            transition: background-color 0.2s;
-        }
-        details > summary.main-mystery-summary:hover {
-            background-color: #e5e7eb; /* gray-200 */
-        }
-        /* Style for main details content */
-        details[open] > div.main-mystery-content {
-            padding: 1rem 1.5rem; /* Increased padding */
-            border: 1px solid #e5e7eb; /* gray-200 */
-            border-top: none;
-            border-radius: 0 0 0.375rem 0.375rem; /* rounded-b-md */
-            margin-top: -0.5rem; /* Adjust overlap */
-            margin-bottom: 1rem;
-        }
-
-        /* Ensure Malayalam text wraps correctly */
-        p, li, h1, h2, h3, h4, summary, button {
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        /* Styling for prayer headings */
-        h4.prayer-heading {
-             margin-top: 1.5rem; /* Space above headings */
-             margin-bottom: 0.5rem;
-             font-weight: 600; /* semibold */
-             font-size: 1.05rem; /* Slightly larger */
-             border-bottom: 1px solid #eee;
-             padding-bottom: 0.25rem;
-        }
-        h4.prayer-heading:first-of-type {
-            margin-top: 0.5rem; /* Less space for the very first heading */
-        }
-
-        /* Styling for day buttons */
-        .day-button {
-            transition: all 0.2s ease-in-out;
-        }
-        .day-button.selected {
-            transform: scale(1.05);
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5); /* Indigo focus ring */
-            z-index: 10; /* Bring selected button to front */
-        }
-        /* Styling for the selected day info box */
-        #selected-day-info {
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        /* Styling for the list of mysteries */
-        .mysteries-list ol {
-            list-style: none; /* Remove default list styling */
-            padding-left: 0;
-            margin-top: 1rem;
-        }
-        .mysteries-list li {
-            margin-bottom: 1.5rem; /* Space between mysteries */
-            padding-left: 1.75rem; /* Indentation for mystery content */
-            position: relative; /* For positioning the number */
-            border-left: 3px solid #e5e7eb; /* Left border */
-            padding-bottom: 1rem; /* Space at bottom */
-            padding-top: 0.25rem; /* Space at top */
-        }
-         .mysteries-list li::before { /* Custom numbering */
-            content: counter(mystery-counter);
-            counter-increment: mystery-counter;
-            position: absolute;
-            left: -0.75rem; /* Position number outside the border */
-            top: 0.1rem;
-            background-color: #60a5fa; /* blue-400 */
-            color: white;
-            font-weight: bold;
-            width: 1.5rem;
-            height: 1.5rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-        }
-        .mysteries-list li strong { /* Mystery title */
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            color: #1e3a8a; /* blue-900 */
-        }
-        .mysteries-list li em { /* Prayer counts */
-             display: block;
-             font-size: 0.85rem;
-             color: #6b7280; /* gray-500 */
-             margin-bottom: 0.5rem;
-        }
-         .mysteries-list li .closing-prayer { /* Closing prayer */
-             font-size: 0.9rem;
-             color: #374151; /* gray-700 */
-             background-color: #f9fafb; /* gray-50 */
-             padding: 0.5rem 0.75rem;
-             border-radius: 0.25rem;
-             border: 1px solid #f3f4f6; /* gray-100 */
-         }
-         .mysteries-list li .closing-prayer strong { /* "സമാപന പ്രാർത്ഥന:" label */
-             display: inline; /* Keep label inline */
-             font-weight: 600;
-             color: #4b5563; /* gray-600 */
-             margin-bottom: 0;
-         }
-
-        /* Use Tailwind's hidden class for conditional display */
-        .hidden {
-            display: none;
-        }
-
+        #daily-prayer-display .mystery-title { font-weight: 600; color: #1e3a8a; display: block; margin-bottom: 0.25rem; }
+        #daily-prayer-display .mystery-description { font-size: 0.9rem; color: #4b5563; margin-bottom: 0.5rem; }
+        #daily-prayer-display .prayer-steps { font-size: 0.9rem; color: #6b7280; margin-bottom: 0.5rem; }
+        #daily-prayer-display .fatima-prayer { font-style: italic; color: #4b5563; margin-top: 0.5rem; padding-left: 1rem; border-left: 2px solid #fbbf24; font-size: 0.9em; }
+        #daily-prayer-display .closing-prayer { font-size: 0.9rem; color: #374151; background-color: #f3f4f6; padding: 0.5rem 0.75rem; border-radius: 0.25rem; border: 1px solid #e5e7eb; margin-top: 0.5rem; }
+        #daily-prayer-display .closing-prayer strong { font-weight: 600; color: #4b5563; }
+        .hidden { display: none; }
+        .final-prayer-section { margin-top: 1.5rem; padding: 1rem; border-radius: 0.375rem; }
+        /* Litany Styling within daily display */
+        .litany-section-inline { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed #d1d5db; }
+        .litany-list { list-style: none; padding-left: 0; margin-top: 0.5rem; }
+        .litany-list li { display: flex; justify-content: space-between; margin-bottom: 0.3rem; padding-right: 1rem; break-inside: avoid; }
+        .litany-list .response { font-style: italic; color: #4b5563; white-space: nowrap; margin-left: 1rem; }
+        .litany-list .lamb-of-god { display: block; margin-top: 1rem; }
+        .litany-list .lamb-of-god span { display: block; }
+        .litany-list .final-litany-prayer { margin-top: 1rem; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 p-4 md:p-8">
@@ -150,231 +76,24 @@
                 <li><strong>അടുത്ത 27 ദിവസം (കൃതജ്ഞത):</strong> അപേക്ഷ സാധിച്ചുകിട്ടിയാലും ഇല്ലെങ്കിലും നന്ദി പ്രകാശിപ്പിച്ച് ജപമാല ചൊല്ലി പ്രാർത്ഥിക്കുന്നു.</li>
             </ul>
              <p class="text-sm text-gray-600">“ആരൊക്കെ എന്നിൽ നിന്നും സഹായങ്ങൾ നേടുവാൻ ആഗ്രഹിക്കുന്നുവോ, അവർ ജപമാല പ്രാർത്ഥനകളുടെ 3 നൊവേനകൾ അപേക്ഷയായും 3 നൊവേനകൾ കൃതജ്ഞതയായും ചൊല്ലണം”. (എത്രയും പരിശുദ്ധ ജപമാല രാജ്ഞിയുടെ വാഗ്ദാനം).</p>
-        </section>
-
-        <section class="mb-8 p-4 bg-green-50 rounded-lg border border-green-200">
-            <h2 class="text-xl font-semibold text-green-800 mb-3">എങ്ങനെ പ്രാർത്ഥിക്കണം?</h2>
-            <ul class="list-disc list-inside space-y-2 ml-4">
-                <li>താഴെയുള്ള നാവിഗേഷനിൽ നിന്ന് ദിവസം തിരഞ്ഞെടുക്കുക.</li>
-                <li>ദിവസം 1-27 വരെ തിരഞ്ഞെടുക്കുമ്പോൾ, പ്രാർത്ഥനാ ഭാഗത്ത് <strong class="text-green-900">അപേക്ഷാ</strong> പ്രാർത്ഥനകൾ കാണിക്കും.</li>
-                 <li>ദിവസം 28-54 വരെ തിരഞ്ഞെടുക്കുമ്പോൾ, പ്രാർത്ഥനാ ഭാഗത്ത് <strong class="text-green-900">കൃതജ്ഞതാ</strong> പ്രാർത്ഥനകൾ കാണിക്കും.</li>
-                <li>സന്തോഷകരമായ, ദുഃഖകരമായ, മഹിമയുടെ ദിവ്യരഹസ്യങ്ങൾ നിശ്ചിത ക്രമത്തിൽ മാറിമാറി ചൊല്ലണം (ദിവസം 1: സന്തോഷം, ദിവസം 2: ദുഃഖം, ദിവസം 3: മഹിമ, ഇത് ആവർത്തിക്കുന്നു).</li>
-                <li>ഓരോ ദിവസവും അന്നത്തേയ്ക്കായി നിശ്ചയിച്ചിട്ടുള്ള ദിവ്യരഹസ്യങ്ങളുടെ 5 രഹസ്യങ്ങളും പൂർണ്ണമായി ചൊല്ലണം.</li>
-                <li>(പ്രകാശത്തിന്റെ ദിവ്യരഹസ്യങ്ങൾ ഈ നൊവേനയിൽ പരമ്പരാഗതമായി ഉൾപ്പെടുത്തിയിട്ടില്ല).</li>
-            </ul>
-             <h3 class="text-lg font-semibold mt-4 mb-2 text-green-700">ദിവസേനയുള്ള പ്രാർത്ഥനാ ക്രമം:</h3>
-             <ol class="list-decimal list-inside space-y-1 ml-4 text-sm">
-                 <li>കുരിശു വരയ്ക്കുക.</li>
-                 <li>ഘട്ടത്തിനനുസരിച്ച് (അപേക്ഷ/കൃതജ്ഞത) <strong class="text-green-900">ആമുഖ പ്രാർത്ഥന</strong> ചൊല്ലുക (താഴെ കാണിച്ചിരിക്കുന്നു).</li>
-                 <li>ശ്ലീഹന്മാരുടെ വിശ്വാസ പ്രമാണം.</li>
-                 <li>സ്വർഗ്ഗസ്ഥനായ പിതാവേ.</li>
-                 <li>3 നന്മ നിറഞ്ഞ മറിയം.</li>
-                 <li>ത്രിത്വ സ്‌തുതി.</li>
-                 <li>ഓരോ ദശകത്തിനും (5 എണ്ണം):
-                     <ul class="list-disc list-inside ml-6 mt-1">
-                         <li><strong class="text-green-900">ദിവ്യരഹസ്യം</strong> പ്രഖ്യാപിക്കുക (താഴെ ലിസ്റ്റ് ചെയ്തിരിക്കുന്നു).</li>
-                         <li>1 സ്വർഗ്ഗസ്ഥനായ പിതാവേ.</li>
-                         <li>10 നന്മ നിറഞ്ഞ മറിയം.</li>
-                         <li>1 ത്രിത്വ സ്‌തുതി.</li>
-                         <li>അതത് രഹസ്യത്തിൻ്റെ <strong class="text-green-900">സമാപന പ്രാർത്ഥന</strong> (താഴെ ലിസ്റ്റ് ചെയ്തിരിക്കുന്നു).</li>
-                     </ul>
-                 </li>
-                 <li>5 ദശകങ്ങൾക്കും ശേഷം, പരിശുദ്ധ രാജ്ഞി ചൊല്ലുക.</li>
-                 <li>ഘട്ടത്തിനനുസരിച്ച് (അപേക്ഷ/കൃതജ്ഞത) <strong class="text-green-900">സമാപന പ്രാർത്ഥന</strong> ചൊല്ലുക (താഴെ കാണിച്ചിരിക്കുന്നു, നിയോഗം പറയുക).</li>
-             </ol>
+             <p class="mt-2 text-sm">ഓരോ ദിവസവും സന്തോഷകരമായ, ദുഃഖകരമായ, മഹിമയുടെ ദിവ്യരഹസ്യങ്ങൾ മാറിമാറി വരും (ദിവസം 1: സന്തോഷം, ദിവസം 2: ദുഃഖം, ദിവസം 3: മഹിമ, ഇത് ആവർത്തിക്കുന്നു).</p>
         </section>
 
         <section id="day-navigation-section" class="mb-8 p-4 bg-indigo-50 rounded-lg border border-indigo-200">
             <h2 class="text-xl font-semibold text-indigo-800 mb-4 text-center">ദിവസം തിരഞ്ഞെടുക്കുക</h2>
             <div class="mb-6">
                 <h3 class="text-lg font-semibold text-indigo-700 mb-3 text-center border-b border-indigo-200 pb-2">അപേക്ഷ (ദിവസം 1-27)</h3>
-                <div id="day-navigation-grid-petition" class="grid grid-cols-6 sm:grid-cols-9 md:grid-cols-9 gap-2">
-                    </div>
+                <div id="day-navigation-grid-petition" class="grid grid-cols-6 sm:grid-cols-9 md:grid-cols-9 gap-2"></div>
             </div>
             <div>
                 <h3 class="text-lg font-semibold text-indigo-700 mb-3 text-center border-b border-indigo-200 pb-2">കൃതജ്ഞത (ദിവസം 28-54)</h3>
-                <div id="day-navigation-grid-thanksgiving" class="grid grid-cols-6 sm:grid-cols-9 md:grid-cols-9 gap-2">
-                    </div>
+                <div id="day-navigation-grid-thanksgiving" class="grid grid-cols-6 sm:grid-cols-9 md:grid-cols-9 gap-2"></div>
             </div>
-            <div id="selected-day-info" class="mt-6 p-3 bg-white rounded-md border border-indigo-300 text-center font-semibold text-indigo-900 opacity-0">
-                </div>
+            <div id="selected-day-info" class="mt-6 p-3 bg-white rounded-md border border-indigo-300 text-center font-semibold text-indigo-900 opacity-0"></div>
         </section>
 
-        <div id="mysteries-section" class="space-y-6">
-
-            <details id="joyful-mysteries">
-                <summary class="main-mystery-summary text-lg text-yellow-800 bg-yellow-100 hover:bg-yellow-200 border border-yellow-300">
-                    പരിശുദ്ധ ജപമാലയുടെ സന്തോഷകരമായ ദിവ്യരഹസ്യങ്ങൾ
-                </summary>
-                <div class="main-mystery-content bg-white border border-yellow-300">
-                    <p class="mb-4 text-sm font-medium text-yellow-700">(പ്രാർത്ഥിക്കേണ്ട ദിവസങ്ങൾ: 1, 4, 7, ..., 49, 52)</p>
-
-                    <div id="joyful-intro-petition" class="hidden">
-                        <h4 class="prayer-heading text-yellow-800">തുടക്ക പ്രാർത്ഥന (അപേക്ഷ):</h4>
-                        <p class="text-sm mb-4">എത്രയും പരിശുദ്ധ ജപമാലയുടെ രാജ്ഞിയായ മറിയമേ സ്വസ്തി! എൻ്റെ അമ്മയായ മറിയമേ സ്വസ്‌തി! അങ്ങേയ്ക്ക് റോസാപ്പൂക്കളുടെ ഒരു കിരീടം സമർപ്പിക്കുവാനായി അങ്ങയുടെ പാദാന്തികത്തിൽ എളിമയോടെ ഞാൻ മുട്ടു കുത്തുന്നു. മഞ്ഞുപോലെ വെൺമയുള്ള പൂമൊട്ടുകൾ അങ്ങയെ, അങ്ങയുടെ സന്തോഷങ്ങൾ ഓർമ്മിപ്പിക്കുവാനായി; ഓരോ പൂമൊട്ടുകളിലൂടെ ഓരോ ദിവ്യരഹസ്യങ്ങൾ അങ്ങേയ്ക്ക് സമർപ്പിച്ചുകൊണ്ട്; ഒരു പ്രത്യേക കൃപയ്ക്കായുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം ഓരോന്നും 10 വീതം ഒരുമിച്ച് ചേർത്തു വച്ച് സമർപ്പിക്കുന്നു. ഓ പരിശുദ്ധ രാജ്ഞീ, ദൈവകൃപ പകർന്നു കൊടുക്കുന്നവളേ, അങ്ങയെ വിളിച്ചപേക്ഷിക്കുന്ന എല്ലാവരുടേയും മാതാവേ, അങ്ങേയ്ക്ക് എൻ്റെ സമ്മാനത്തിലേക്ക് നോക്കാതിരിക്കുവാനോ അതിൻ്റെ കെട്ടുറപ്പ് കാണാതിരിക്കുവാനോ ഒരിക്കലും സാധിക്കുകയില്ല. അങ്ങ് എൻ്റെ സമ്മാനം സ്വീകരിക്കുമ്പോൾ, അങ്ങ് എൻ്റെ അപേക്ഷയും സ്വീകരിക്കും; ഉത്തമ വിശ്വാസത്തോടും ലഭിക്കുമെന്ന ഉറപ്പോടും കൂടെ ഞാൻ അപേക്ഷിച്ചിരിക്കുന്ന നിയോഗം അങ്ങയുടെ ഉദാരതയിൽ നിന്നും അങ്ങ് എനിക്ക് സാധിച്ച് നൽകും. അങ്ങയോട് അപേക്ഷിക്കുന്ന യാതൊന്നിനേക്കുറിച്ചും ഞാൻ നൈരാശ്യപ്പെടുകയില്ല. എൻ്റെ അമ്മേ, അവിടുന്ന് എൻ്റെ അമ്മയാണെന്ന് എനിക്ക് കാണിച്ചു തരേണമേ.</p>
-                    </div>
-                    <div id="joyful-intro-thanksgiving" class="hidden">
-                        <h4 class="prayer-heading text-yellow-800">തുടക്ക പ്രാർത്ഥന (കൃതജ്ഞത):</h4>
-                        <p class="text-sm mb-4">എത്രയും പരിശുദ്ധ ജപമാലയുടെ രാജ്ഞിയായ മറിയമേ സ്വസ്തി! എൻ്റെ അമ്മയായ മറിയമേ സ്വസ്‌തി! അങ്ങേയ്ക്ക് റോസാപ്പൂക്കളുടെ ഒരു കിരീടം സമർപ്പിക്കുവാനായി അങ്ങയുടെ പാദാന്തികത്തിൽ കൃതജ്ഞതാപൂർവ്വം ഞാൻ മുട്ടു കുത്തുന്നു. മഞ്ഞുപോലെ വെൺമയുള്ള പൂമൊട്ടുകൾ അങ്ങയെ, അങ്ങയുടെ സന്തോഷങ്ങൾ ഓർമ്മിപ്പിക്കുവാനായി; ഓരോ പൂമൊട്ടുകളിലൂടെ ഓരോ ദിവ്യരഹസ്യങ്ങൾ അങ്ങേയ്ക്ക് സമർപ്പിച്ചുകൊണ്ട്; ഒരു പ്രത്യേക കൃപയ്ക്കായുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം ഓരോന്നും 10 വീതം ഒരുമിച്ച് ചേർത്തു വച്ച് സമർപ്പിക്കുന്നു. ഓ പരിശുദ്ധ രാജ്ഞീ, ദൈവകൃപ പകർന്നു കൊടുക്കുന്നവളേ, അങ്ങയെ വിളിച്ചപേക്ഷിക്കുന്ന എല്ലാവരുടേയും മാതാവേ! അങ്ങേയ്ക്ക് എൻ്റെ സമ്മാനത്തിലേക്ക് നോക്കാതിരിക്കുവാനോ അതിൻ്റെ കെട്ടുറപ്പ് കാണാതിരിക്കുവാനോ ഒരിക്കലും സാധിക്കുകയില്ല. അങ്ങ് എൻ്റെ സമ്മാനം സ്വീകരിക്കുമ്പോൾ, അങ്ങ് എൻ്റെ കൃതജ്ഞതയും സ്വീകരിക്കും; ഉത്തമ വിശ്വാസത്തോടും ലഭിക്കുമെന്ന ഉറപ്പോടും കൂടെ ഞാൻ അപേക്ഷിച്ചിരിക്കുന്ന നിയോഗം അങ്ങ് എനിക്ക് അങ്ങയുടെ ഉദാരതയിൽ നിന്നും സാധിച്ച് നൽകി. അങ്ങയോട് അപേക്ഷിച്ച യാതൊന്നിനേക്കുറിച്ചും ഞാൻ നൈരാശ്യപ്പെടുന്നില്ല. അവിടുന്ന് എൻ്റെ അമ്മയാണെന്ന് അങ്ങന്നെ സത്യമായും കാണിച്ചു തന്നു.</p>
-                    </div>
-
-                    <div class="mysteries-list">
-                        <h4 class="prayer-heading text-yellow-800">ദിവ്യരഹസ്യങ്ങൾ:</h4>
-                        <ol style="counter-reset: mystery-counter;">
-                            <li>
-                                <strong>മംഗളവാർത്ത</strong>
-                                <em>(1 സ്വർഗ്ഗ..., 10 നന്മ..., 1 ത്രിത്വ...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> മഞ്ഞു പോലെ വെൺമയുള്ള ഈ പൂമൊട്ടുകൾ അടക്കം എന്ന പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                            <li>
-                                <strong>സന്ദർശനം</strong>
-                                <em>(...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> മഞ്ഞു പോലെ വെൺമയുള്ള ഈ പൂമൊട്ടുകൾ അനുകമ്പ എന്ന പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                            <li>
-                                <strong>ജനനം</strong>
-                                <em>(...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> മഞ്ഞു പോലെ വെൺമയുള്ള ഈ പൂമൊട്ടുകൾ ലോകത്തോടുള്ള വിരക്തി എന്ന പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                            <li>
-                                <strong>കാഴ്ച്‌ചവയ്പ്‌പ്</strong>
-                                <em>(...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> മഞ്ഞു പോലെ വെൺമയുള്ള ഈ പൂമൊട്ടുകൾ ശുദ്ധത എന്ന പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                             <li>
-                                <strong>ദേവാലയത്തിൽ കണ്ടെത്തുന്നു</strong>
-                                <em>(...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> മഞ്ഞു പോലെ വെൺമയുള്ള ഈ പൂമൊട്ടുകൾ അനുസരണം എന്ന പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                        </ol>
-                    </div>
-
-                     <div id="joyful-concluding-petition" class="hidden">
-                        <h4 class="prayer-heading text-yellow-800">സമാപന പ്രാർത്ഥന (അപേക്ഷ):</h4>
-                        <p class="text-sm">എത്രയും മാധുര്യമുള്ള കന്യകാമാതാവേ, അങ്ങേ നെറ്റിയിൽ വയ്ക്കുവാനായി എൻ്റെ പൂച്ചെണ്ടുകൾ ഒരു പുഷ്‌പമുടി പോലെ (റീത്ത് പോലെ) കെട്ടുവാൻ ഈ ആത്മീയ സംസർഗ്ഗം അങ്ങേയ്ക്ക് ഞാൻ സമർപ്പിക്കുന്നു. ഓ എൻ്റെ അമ്മേ! ഉദാരതയോടെ എൻ്റെ സമ്മാനത്തിലേക്ക് നോക്കുകയും ഞാൻ അപേക്ഷിക്കുന്ന ഈ നിയോഗം (നിയോഗം പറയുക) അമ്മയുടെ സ്നേഹത്തിലൂടെ എനിക്ക് സാധിച്ച് തരുകയും ചെയ്യേണമേ. നന്മ നിറഞ്ഞ മറിയം ചൊല്ലുക.</p>
-                    </div>
-                     <div id="joyful-concluding-thanksgiving" class="hidden">
-                        <h4 class="prayer-heading text-yellow-800">സമാപന പ്രാർത്ഥന (കൃതജ്ഞത):</h4>
-                        <p class="text-sm">എത്രയും മാധുര്യമുള്ള കന്യകാമാതാവേ, ഞാൻ അപേക്ഷിച്ച ഈ നിയോഗം (നിയോഗം പറയുക) അമ്മയുടെ സ്നേഹത്തിൽ നിന്നും എനിക്ക് സാധിച്ച് തന്നതിന് കൃതജ്ഞതയായി അങ്ങേ നെറ്റിയിൽ വയ്ക്കുവാനായി എൻ്റെ പൂച്ചെണ്ടുകൾ ഒരു പുഷ്‌പമുടി പോലെ (റീത്ത് പോലെ) കെട്ടുവാൻ ഈ ആത്മീയ സംസർഗ്ഗം അങ്ങേയ്ക്ക് ഞാൻ സമർപ്പിക്കുന്നു. നന്മ നിറഞ്ഞ മറിയം ചൊല്ലുക.</p>
-                    </div>
-                </div>
-            </details>
-
-            <details id="sorrowful-mysteries">
-                <summary class="main-mystery-summary text-lg text-red-800 bg-red-100 hover:bg-red-200 border border-red-300">
-                    പരിശുദ്ധ ജപമാലയുടെ ദുഖകരമായ ദിവ്യരഹസ്യങ്ങൾ
-                </summary>
-                 <div class="main-mystery-content bg-white border border-red-300">
-                    <p class="mb-4 text-sm font-medium text-red-700">(പ്രാർത്ഥിക്കേണ്ട ദിവസങ്ങൾ: 2, 5, 8, ..., 50, 53)</p>
-
-                    <div id="sorrowful-intro-petition" class="hidden">
-                        <h4 class="prayer-heading text-red-800">തുടക്ക പ്രാർത്ഥന (അപേക്ഷ):</h4>
-                        <p class="text-sm mb-4">എത്രയും പരിശുദ്ധ ജപമാലയുടെ രാജ്ഞിയായ മറിയമേ സ്വസ്തി! എൻ്റെ അമ്മയായ മറിയമേ സ്വസ്‌തി! അങ്ങേയ്ക്ക് റോസാപ്പൂക്കളുടെ ഒരു കിരീടം സമർപ്പിക്കുവാനായി അങ്ങയുടെ പാദാന്തികത്തിൽ എളിമയോടെ ഞാൻ മുട്ടു കുത്തുന്നു. രക്ത ചുവപ്പുള്ള റോസാപ്പൂക്കൾ അങ്ങയുടെ ദിവ്യകുമാരനായ ഈശോ മിശിഹായുടെ പീഡാനുഭവങ്ങൾ അങ്ങയെ ഓർമ്മിപ്പിക്കുവാനായി, അങ്ങ് കൂടി ഈശോയോടൊപ്പം സമ്പൂർണ്ണമായി ഭാഗഭാഗിത്വം വഹിച്ച ഈശോയുടെ പീഡാനുഭവങ്ങളുടെ കയ്പ്പ് അങ്ങയെ ഓർമ്മിപ്പിക്കുവാനായി; ഓരോ റോസാപ്പൂക്കളിലൂടെ ഓരോ ദിവ്യരഹസ്യങ്ങൾ അങ്ങേയ്ക്ക് സമർപ്പിച്ചുകൊണ്ട്; ഒരു പ്രത്യേക കൃപയ്ക്കായുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം ഓരോന്നും 10 വീതം ഒരുമിച്ച് ചേർത്തു വച്ച് സമർപ്പിക്കുന്നു. ഓ പരിശുദ്ധ രാജ്ഞീ, ദൈവകൃപ പകർന്നു കൊടുക്കുന്നവളേ, അങ്ങയെ വിളിച്ചപേക്ഷിക്കുന്ന എല്ലാവരുടേയും മാതാവേ, അങ്ങേയ്ക്ക് എൻ്റെ സമ്മാനത്തിലേക്ക് നോക്കാതിരിക്കുവാനോ അതിൻ്റെ കെട്ടുറപ്പ് കാണാതിരിക്കുവാനോ ഒരിക്കലും സാധിക്കുകയില്ല. അങ്ങ് എൻ്റെ സമ്മാനം സ്വീകരിക്കുമ്പോൾ, അങ്ങ് എൻ്റെ അപേക്ഷയും സ്വീകരിക്കും; ഉത്തമ വിശ്വാസത്തോടും ലഭിക്കുമെന്ന ഉറപ്പോടും കൂടെ ഞാൻ അപേക്ഷിച്ചിരിക്കുന്ന നിയോഗം അങ്ങയുടെ ഉദാരതയിൽ നിന്നും അങ്ങ് എനിക്ക് സാധിച്ച് നൽകും. അങ്ങയോട് അപേക്ഷിക്കുന്ന യാതൊന്നിനേക്കുറിച്ചും ഞാൻ നൈരാശ്യപ്പെടുകയില്ല. എൻ്റെ അമ്മേ, അവിടുന്ന് എൻ്റെ അമ്മയാണെന്ന് എനിക്ക് കാണിച്ചു തരേണമേ.</p>
-                    </div>
-                    <div id="sorrowful-intro-thanksgiving" class="hidden">
-                        <h4 class="prayer-heading text-red-800">തുടക്ക പ്രാർത്ഥന (കൃതജ്ഞത):</h4>
-                        <p class="text-sm mb-4">എത്രയും പരിശുദ്ധ ജപമാലയുടെ രാജ്ഞിയായ മറിയമേ സ്വസ്തി! എൻ്റെ അമ്മയായ മറിയമേ സ്വസ്‌തി! അങ്ങേയ്ക്ക് റോസാപ്പൂക്കളുടെ ഒരു കിരീടം സമർപ്പിക്കുവാനായി അങ്ങയുടെ പാദാന്തികത്തിൽ കൃതജ്ഞതാപൂർവ്വം ഞാൻ മുട്ടു കുത്തുന്നു. രക്ത ചുവപ്പുള്ള റോസാപ്പൂക്കൾ അങ്ങയുടെ ദിവ്യകുമാരനായ ഈശോ മിശിഹായുടെ പീഡാനുഭവങ്ങൾ അങ്ങയെ ഓർമ്മിപ്പിക്കുവാനായി, അങ്ങ് കൂടി ഈശോയോടൊപ്പം സമ്പൂർണ്ണമായി ഭാഗഭാഗിത്വം വഹിച്ച ഈശോയുടെ പീഡാനുഭവങ്ങളുടെ കയ്പ്പ് അങ്ങയെ ഓർമ്മിപ്പിക്കുവാനായി; ഓരോ റോസാപ്പൂക്കളിലൂടെ ഓരോ ദിവ്യരഹസ്യങ്ങൾ അങ്ങേയ്ക്ക് സമർപ്പിച്ചുകൊണ്ട്; ഒരു പ്രത്യേക കൃപയ്ക്കായുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം ഓരോന്നും 10 വീതം ഒരുമിച്ച് ചേർത്തു വച്ച് സമർപ്പിക്കുന്നു. ഓ പരിശുദ്ധ രാജ്ഞീ, ദൈവക്യപ പകർന്നു കൊടുക്കുന്നവളേ, അങ്ങയെ വിളിച്ചപേക്ഷിക്കുന്ന എല്ലാവരുടേയും മാതാവേ! അങ്ങേയ്ക്ക് എൻ്റെ സമ്മാനത്തിലേക്ക് നോക്കാതിരിക്കുവാനോ അതിൻ്റെ കെട്ടുറപ്പ് കാണാതിരിക്കുവാനോ ഒരിക്കലും സാധിക്കുകയില്ല. അങ്ങ് എൻ്റെ സമ്മാനം സ്വീകരിക്കുമ്പോൾ, അങ്ങ് എൻ്റെ കൃതജ്ഞതയും സ്വീകരിക്കും; ഉത്തമ വിശ്വാസത്തോടും ലഭിക്കുമെന്ന ഉറപ്പോടും കൂടെ ഞാൻ അപേക്ഷിച്ചിരിക്കുന്ന നിയോഗം അങ്ങ് എനിക്ക് അങ്ങയുടെ ഉദാരതയിൽ നിന്നും സാധിച്ച് നൽകി. അങ്ങയോട് അപേക്ഷിച്ച യാതൊന്നിനേക്കുറിച്ചും ഞാൻ നൈരാശ്യപ്പെടുന്നില്ല. അവിടുന്ന് എൻ്റെ അമ്മയാണെന്ന് അങ്ങെന്നെ സത്യമായും കാണിച്ചു തന്നു.</p>
-                    </div>
-
-                    <div class="mysteries-list">
-                        <h4 class="prayer-heading text-red-800">ദിവ്യരഹസ്യങ്ങൾ:</h4>
-                        <ol style="counter-reset: mystery-counter;">
-                            <li>
-                                <strong>ഗത്സമെൻ തോട്ടത്തിലെ പ്രാർത്ഥന</strong>
-                                <em>(...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> രക്ത ചുവപ്പുള്ള ഈ റോസാപ്പൂക്കൾ ദൈവേഷ്ടത്തിന് സമ്പൂർണ്ണമായി വഴങ്ങിക്കൊടുക്കുവാനുള്ള പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                            <li>
-                                <strong>ചമ്മട്ടികളാൽ അടിക്കപ്പെടുന്നു</strong>
-                                <em>(...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> രക്ത ചുവപ്പുള്ള ഈ റോസാപ്പൂക്കൾ ഇന്ദ്രിയനിഗ്രഹം എന്ന പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                            <li>
-                                <strong>മുൾമുടി ധരിപ്പിക്കുന്നു</strong>
-                                <em>(...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> രക്ത ചുവപ്പുള്ള ഈ റോസാപ്പൂക്കൾ എളിമ എന്ന പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                            <li>
-                                <strong>കുരിശു വഹിച്ചുകൊണ്ടുള്ള യാത്ര</strong>
-                                <em>(...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> രക്ത ചുവപ്പുള്ള ഈ റോസാപ്പൂക്കൾ പ്രതികൂല സാഹചര്യങ്ങളിൽ സഹനശക്തി എന്ന പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                            <li>
-                                <strong>കുരിശിൽ മരിക്കുന്നു</strong>
-                                <em>(...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> രക്ത ചുവപ്പുള്ള ഈ റോസാപ്പൂക്കൾ ശത്രുക്കളെ സ്നേഹിക്കുവാനുള്ള പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                        </ol>
-                    </div>
-
-                    <div id="sorrowful-concluding-petition" class="hidden">
-                         <h4 class="prayer-heading text-red-800">സമാപന പ്രാർത്ഥന (അപേക്ഷ):</h4>
-                         <p class="text-sm">എത്രയും മാധുര്യമുള്ള കന്യകാമാതാവേ, അങ്ങേ നെറ്റിയിൽ വയ്ക്കുവാനായി എൻ്റെ പൂച്ചെണ്ടുകൾ ഒരു പുഷ്‌പമുടി പോലെ (റീത്ത് പോലെ) കെട്ടുവാൻ ഈ ആത്മീയ സംസർഗ്ഗം അങ്ങേയ്ക്ക് ഞാൻ സമർപ്പിക്കുന്നു. ഓ എൻ്റെ അമ്മേ! ഉദാരതയോടെ എൻ്റെ സമ്മാനത്തിലേക്ക് നോക്കുകയും ഞാൻ അപേക്ഷിക്കുന്ന ഈ നിയോഗം (നിയോഗം പറയുക) അമ്മയുടെ സ്നേഹത്തിലൂടെ എനിക്ക് സാധിച്ച് തരുകയും ചെയ്യേണമേ. നന്മ നിറഞ്ഞ മറിയം ചൊല്ലുക.</p>
-                    </div>
-                     <div id="sorrowful-concluding-thanksgiving" class="hidden">
-                         <h4 class="prayer-heading text-red-800">സമാപന പ്രാർത്ഥന (കൃതജ്ഞത):</h4>
-                         <p class="text-sm">എത്രയും മാധുര്യമുള്ള കന്യകാമാതാവേ, ഞാൻ അപേക്ഷിച്ച ഈ നിയോഗം (നിയോഗം പറയുക) അമ്മയുടെ സ്നേഹത്തിൽ നിന്നും എനിക്ക് സാധിച്ച് തന്നതിന് കൃതജ്ഞതയായി അങ്ങേ നെറ്റിയിൽ വയ്ക്കുവാനായി എൻ്റെ പൂച്ചെണ്ടുകൾ ഒരു പുഷ്‌പമുടി പോലെ (റീത്ത് പോലെ) കെട്ടുവാൻ ഈ ആത്മീയ സംസർഗ്ഗം അങ്ങേയ്ക്ക് ഞാൻ സമർപ്പിക്കുന്നു. നന്മ നിറഞ്ഞ മറിയം ചൊല്ലുക.</p>
-                    </div>
-                </div>
-            </details>
-
-            <details id="glorious-mysteries">
-                <summary class="main-mystery-summary text-lg text-purple-800 bg-purple-100 hover:bg-purple-200 border border-purple-300">
-                    പരിശുദ്ധ ജപമാലയുടെ മഹിമയുടെ ദിവ്യരഹസ്യങ്ങൾ
-                </summary>
-                 <div class="main-mystery-content bg-white border border-purple-300">
-                     <p class="mb-4 text-sm font-medium text-purple-700">(പ്രാർത്ഥിക്കേണ്ട ദിവസങ്ങൾ: 3, 6, 9, ..., 51, 54)</p>
-
-                     <div id="glorious-intro-petition" class="hidden">
-                        <h4 class="prayer-heading text-purple-800">തുടക്ക പ്രാർത്ഥന (അപേക്ഷ):</h4>
-                        <p class="text-sm mb-4">എത്രയും പരിശുദ്ധ ജപമാലയുടെ രാജ്ഞിയായ മറിയമേ സ്വസ്തി! എൻ്റെ അമ്മയായ മറിയമേ സ്വസ്‌തി! അങ്ങേയ്ക്ക് റോസാപ്പൂക്കളുടെ ഒരു കിരീടം സമർപ്പിക്കുവാനായി അങ്ങയുടെ പാദാന്തികത്തിൽ എളിമയോടെ ഞാൻ മുട്ടു കുത്തുന്നു. പീഡാനുഭവത്തിൻ്റെ നേർത്ത ചുവപ്പു നിറം കലർന്ന, മുഴുവനായി വിടർന്ന വെളുത്ത റോസാപ്പുഷ്പ്പങ്ങൾ, ഈശോയുടെ പീഡാനുഭവത്തിൻ്റേയും അങ്ങയുടെ സഹനങ്ങളുടേയും പ്രതിഫലമായ അങ്ങേ മഹത്വങ്ങൾ അങ്ങയെ ഓർമ്മിപ്പിക്കുവാനായി, ഓരോ റോസാപ്പൂക്കളിലൂടെ ഓരോ ദിവ്യരഹസ്യങ്ങൾ അങ്ങേയ്ക്ക് സമർപ്പിച്ചുകൊണ്ട്; ഒരു പ്രത്യേക കൃപയ്ക്കായുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം ഓരോന്നും 10 വീതം ഒരുമിച്ച് ചേർത്തു വച്ച് സമർപ്പിക്കുന്നു. ഓ പരിശുദ്ധ രാജ്ഞീ, ദൈവക്യപ പകർന്നു കൊടുക്കുന്നവളേ, അങ്ങയെ വിളിച്ചപേക്ഷിക്കുന്ന എല്ലാവരുടേയും മാതാവേ, അങ്ങേയ്ക്ക് എൻ്റെ സമ്മാനത്തിലേക്ക് നോക്കാതിരിക്കുവാനോ അതിൻ്റെ കെട്ടുറപ്പ് കാണാതിരിക്കുവാനോ ഒരിക്കലും സാധിക്കുകയില്ല. അങ്ങ് എൻ്റെ സമ്മാനം സ്വീകരിക്കുമ്പോൾ, അങ്ങ് എൻ്റെ അപേക്ഷയും സ്വീകരിക്കും; ഉത്തമ വിശ്വാസത്തോടും ലഭിക്കുമെന്ന ഉറപ്പോടും കൂടെ ഞാൻ അപേക്ഷിച്ചിരിക്കുന്ന നിയോഗം അങ്ങയുടെ ഉദാരതയിൽ നിന്നും അങ്ങ് എനിക്ക് സാധിച്ച് നൽകും. അങ്ങയോട് അപേക്ഷിക്കുന്ന യാതൊന്നിനേക്കുറിച്ചും ഞാൻ നൈരാശ്യപ്പെടുകയില്ല. എൻ്റെ അമ്മേ, അവിടുന്ന് എൻ്റെ അമ്മയാണെന്ന് എനിക്ക് കാണിച്ചു തരേണമേ.</p>
-                    </div>
-                    <div id="glorious-intro-thanksgiving" class="hidden">
-                        <h4 class="prayer-heading text-purple-800">തുടക്ക പ്രാർത്ഥന (കൃതജ്ഞത):</h4>
-                        <p class="text-sm mb-4">എത്രയും പരിശുദ്ധ ജപമാലയുടെ രാജ്ഞിയായ മറിയമേ സ്വസ്തി! എൻ്റെ അമ്മയായ മറിയമേ സ്വസ്‌തി! അങ്ങേയ്ക്ക് റോസാപ്പൂക്കളുടെ ഒരു കിരീടം സമർപ്പിക്കുവാനായി അങ്ങയുടെ പാദാന്തികത്തിൽ കൃതജ്ഞതാപൂർവ്വം ഞാൻ മുട്ടു കുത്തുന്നു. പീഡാനുഭവത്തിൻ്റെ നേർത്ത ചുവപ്പു നിറം കലർന്ന, മുഴുവനായി വിടർന്ന വെളുത്ത റോസാപ്പുഷ്പ്പങ്ങൾ, ഈശോയുടെ പീഡാനുഭവത്തിൻ്റേയും അങ്ങയുടെ സഹനങ്ങളുടേയും പ്രതിഫലമായ അങ്ങേ മഹത്വങ്ങൾ അങ്ങയെ ഓർമ്മിപ്പിക്കുവാനായി, ഓരോ റോസാപ്പൂക്കളിലൂടെ ഓരോ ദിവ്യരഹസ്യങ്ങൾ അങ്ങേയ്ക്ക് സമർപ്പിച്ചുകൊണ്ട്; ഒരു പ്രത്യേക കൃപയ്ക്കായുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം ഓരോന്നും 10 വീതം ഒരുമിച്ച് ചേർത്തു വച്ച് സമർപ്പിക്കുന്നു. ഓ പരിശുദ്ധ രാജ്ഞീ, ദൈവക്യപ പകർന്നു കൊടുക്കുന്നവളേ, അങ്ങയെ വിളിച്ചപേക്ഷിക്കുന്ന എല്ലാവരുടേയും മാതാവേ! അങ്ങേയ്ക്ക് എൻ്റെ സമ്മാനത്തിലേക്ക് നോക്കാതിരിക്കുവാനോ അതിൻ്റെ കെട്ടുറപ്പ് കാണാതിരിക്കുവാനോ ഒരിക്കലും സാധിക്കുകയില്ല. അങ്ങ് എൻ്റെ സമ്മാനം സ്വീകരിക്കുമ്പോൾ, അങ്ങ് എൻ്റെ ക്യതജ്ഞതയും സ്വീകരിക്കും; ഉത്തമ വിശ്വാസത്തോടും ലഭിക്കുമെന്ന ഉറപ്പോടും കൂടെ ഞാൻ അപേക്ഷിച്ചിരിക്കുന്ന നിയോഗം അങ്ങ് എനിക്ക് അങ്ങയുടെ ഉദാരതയിൽ നിന്നും സാധിച്ച് നൽകി. അങ്ങയോട് അപേക്ഷിച്ച യാതൊന്നിനേക്കുറിച്ചും ഞാൻ നൈരാശ്യപ്പെടുന്നില്ല. അവിടുന്ന് എൻ്റെ അമ്മയാണെന്ന് അങ്ങെന്നെ സത്യമായും കാണിച്ചു തന്നു.</p>
-                    </div>
-
-                     <div class="mysteries-list">
-                        <h4 class="prayer-heading text-purple-800">ദിവ്യരഹസ്യങ്ങൾ:</h4>
-                        <ol style="counter-reset: mystery-counter;">
-                            <li>
-                                <strong>ഉയിർത്തെഴുന്നേൽക്കുന്നു</strong>
-                                <em>(...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> മുഴുവനായി വിടർന്ന ഈ റോസാപ്പൂക്കൾ വിശ്വാസം എന്ന പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം ഞാൻ കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                            <li>
-                                <strong>സ്വർഗ്ഗാരോഹണം ചെയ്യുന്നു</strong>
-                                <em>(...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> മുഴുവനായി വിടർന്ന ഈ റോസാപ്പൂക്കൾ പ്രത്യാശ എന്ന പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം ഞാൻ കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                            <li>
-                                <strong>പരിശുദ്ധാത്മാവിൻ്റെ ആഗമനം</strong>
-                                <em>(...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> മുഴുവനായി വിടർന്ന ഈ റോസാപ്പൂക്കൾ ദയ എന്ന പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം ഞാൻ കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                            <li>
-                                <strong>സ്വർഗ്ഗാരോപണം</strong>
-                                <em>(...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> മുഴുവനായി വിടർന്ന ഈ റോസാപ്പൂക്കൾ ക്രിസ്തു‌വുമായുള്ള ലയനത്തിനുള്ള പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം ഞാൻ കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                            <li>
-                                <strong>കിരീടധാരണം</strong>
-                                <em>(...)</em>
-                                <p class="closing-prayer"><strong>സമാപന പ്രാർത്ഥന:</strong> മുഴുവനായി വിടർന്ന ഈ റോസാപ്പൂക്കൾ അങ്ങയോടുള്ള ലയനത്തിനുള്ള പുണ്യം ലഭിക്കുവാനുള്ള എൻ്റെ അപേക്ഷയോടൊപ്പം ഞാൻ കെട്ടുകയും എളിമയോടെ അങ്ങേ പാദാന്തികത്തിൽ ഈ പൂച്ചെണ്ട് സമർപ്പിക്കുകയും ചെയ്യുന്നു.</p>
-                            </li>
-                        </ol>
-                    </div>
-
-                    <div id="glorious-concluding-petition" class="hidden">
-                         <h4 class="prayer-heading text-purple-800">സമാപന പ്രാർത്ഥന (അപേക്ഷ):</h4>
-                         <p class="text-sm">എത്രയും മാധുര്യമുള്ള കന്യകാമാതാവേ, അങ്ങേ നെറ്റിയിൽ വയ്ക്കുവാനായി എൻ്റെ പൂച്ചെണ്ടുകൾ ഒരു പുഷ്‌പമുടി പോലെ (റീത്ത് പോലെ) കെട്ടുവാൻ ഈ ആത്മീയ സംസർഗ്ഗം അങ്ങേയ്ക്ക് ഞാൻ സമർപ്പിക്കുന്നു. ഓ എൻ്റെ അമ്മേ! ഉദാരതയോടെ എൻ്റെ സമ്മാനത്തിലേക്ക് നോക്കുകയും ഞാൻ അപേക്ഷിക്കുന്ന ഈ നിയോഗം (നിയോഗം പറയുക) അമ്മയുടെ സ്നേഹത്തിലൂടെ എനിക്ക് സാധിച്ച് തരുകയും ചെയ്യേണമേ. നന്മ നിറഞ്ഞ മറിയം ചൊല്ലുക.</p>
-                    </div>
-                     <div id="glorious-concluding-thanksgiving" class="hidden">
-                         <h4 class="prayer-heading text-purple-800">സമാപന പ്രാർത്ഥന (കൃതജ്ഞത):</h4>
-                         <p class="text-sm">എത്രയും മാധുര്യമുള്ള കന്യകാമാതാവേ, ഞാൻ അപേക്ഷിച്ച ഈ നിയോഗം (നിയോഗം പറയുക) അമ്മയുടെ സ്നേഹത്തിൽ നിന്നും എനിക്ക് സാധിച്ച് തന്നതിന് ക്യതജ്ഞതയായി അങ്ങേ നെറ്റിയിൽ വയ്ക്കുവാനായി എൻ്റെ പൂച്ചെണ്ടുകൾ ഒരു പുഷ്‌പമുടി പോലെ (റീത്ത് പോലെ) കെട്ടുവാൻ ഈ ആത്മീയ സംസർഗ്ഗം അങ്ങേയ്ക്ക് ഞാൻ സമർപ്പിക്കുന്നു. നന്മ നിറഞ്ഞ മറിയം ചൊല്ലുക.</p>
-                    </div>
-                </div>
-            </details>
+        <div id="daily-prayer-display">
+            <p class="text-center text-gray-500">പ്രാർത്ഥന കാണുന്നതിന് മുകളിൽ നിന്ന് ഒരു ദിവസം തിരഞ്ഞെടുക്കുക.</p>
         </div>
 
          <section class="mt-10 p-4 bg-gray-100 rounded-lg border border-gray-300">
@@ -397,116 +116,98 @@
 
     </div>
 
-    <script>
-        // Get references to elements
-        const dayNavigationSection = document.getElementById('day-navigation-section');
-        const dayNavigationGridPetition = document.getElementById('day-navigation-grid-petition');
-        const dayNavigationGridThanksgiving = document.getElementById('day-navigation-grid-thanksgiving');
-        const selectedDayInfo = document.getElementById('selected-day-info');
-        const joyfulMysteries = document.getElementById('joyful-mysteries');
-        const sorrowfulMysteries = document.getElementById('sorrowful-mysteries');
-        const gloriousMysteries = document.getElementById('glorious-mysteries');
-        const allMysteryDetails = [joyfulMysteries, sorrowfulMysteries, gloriousMysteries];
-
-        // Define mystery types and phases
-        const mysteryTypes = ['സന്തോഷകരം', 'ദുഃഖകരം', 'മഹിമ']; // Joyful, Sorrowful, Glorious
-        const mysteryElements = [joyfulMysteries, sorrowfulMysteries, gloriousMysteries];
-        const mysteryColors = ['yellow', 'red', 'purple']; // Tailwind color prefixes
-        const mysterySlugs = ['joyful', 'sorrowful', 'glorious']; // For targeting prayer sections
-
-        // --- Generate Day Buttons ---
-        for (let day = 1; day <= 54; day++) {
-            const button = document.createElement('button');
-            button.textContent = day;
-            button.dataset.day = day;
-
-            const mysteryIndex = (day - 1) % 3;
-            button.dataset.mysteryIndex = mysteryIndex;
-            const phase = day <= 27 ? 'അപേക്ഷ' : 'കൃതജ്ഞത';
-            button.dataset.phase = phase;
-            const color = mysteryColors[mysteryIndex];
-
-            button.className = `day-button p-2 border rounded-md text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-offset-1
-                              border-${color}-300 bg-${color}-50 text-${color}-800 hover:bg-${color}-100 focus:ring-${color}-400`;
-
-            button.addEventListener('click', handleDaySelection);
-
-            if (day <= 27) {
-                dayNavigationGridPetition.appendChild(button);
-            } else {
-                dayNavigationGridThanksgiving.appendChild(button);
-            }
+    <div id="prayer-data" class="hidden">
+        <div data-key="generalIntro">അളവില്ലാത്ത സകല നന്മ സ്വരൂപനായിരിക്കുന്ന സർവ്വേശ്വരാ കർത്താവേ, നിസ്സാരരും നന്ദിയറ്റ പാപികളുമായ ഞങ്ങൾ നിസ്സീമപ്രതാപവാനായ അങ്ങേ സന്നിധിയിൽ പ്രാർത്ഥിക്കുവാൻ അയോഗ്യരാകുന്നു. എങ്കിലും അങ്ങേ അനന്തമായ ദയയിൽ ശരണപ്പെട്ടുകൊണ്ട്, പരിശുദ്ധ ദൈവമാതാവിൻ്റെ സ്തുതിക്കായി ജപമാലയർപ്പിക്കുവാൻ ഞങ്ങൾ ആഗ്രഹിക്കുന്നു. ഈ അർപ്പണം ഭക്തിയോടും ശ്രദ്ധയോടും കൂടെ ചെയ്യുന്നതിനു കർത്താവേ, ഞങ്ങളെ അനുഗ്രഹിക്കണമേ.</div>
+        <div data-key="creed">സർവ്വശക്തനായ പിതാവും ആകാശത്തിന്റെയും ഭൂമിയുടെയും സ്രഷ്ടാവുമായ ദൈവത്തിൽ ഞാൻ വിശ്വസിക്കുന്നു. അവിടുത്തെ ഏകപുത്രനും ഞങ്ങളുടെ കർത്താവുമായ ഈശോമിശിഹായിലും ഞാൻ വിശ്വസിക്കുന്നു. ഈ പുത്രൻ പരിശുദ്ധാത്മാവിനാൽ ഗർഭസ്ഥനായി, കന്യകാമറിയത്തിൽനിന്നു പിറന്നു, പന്തിയോസ് പീലാത്തോസിന്റെ കാലത്തു പീഡകൾ സഹിച്ചു, കുരിശിൽ തറയ്ക്കപ്പെട്ടു, മരിച്ചു, അടക്കപ്പെട്ടു, പാതാളങ്ങളിൽ ഇറങ്ങി, മരിച്ചവരുടെ ഇടയിൽനിന്നു മൂന്നാംനാൾ ഉയിർത്തു, സ്വർഗ്ഗത്തിലേക്കെഴുന്നള്ളി, സർവ്വശക്തിയുള്ള പിതാവായ ദൈവത്തിന്റെ വലത്തുഭാഗത്തിരിക്കുന്നു. അവിടെനിന്നു ജീവിക്കുന്നവരെയും മരിച്ചവരെയും വിധിക്കാൻ വരുമെന്നും ഞാൻ വിശ്വസിക്കുന്നു. പരിശുദ്ധാത്മാവിലും ഞാൻ വിശ്വസിക്കുന്നു. വിശുദ്ധ കത്തോലിക്കാസഭയിലും, പുണ്യവാന്മാരുടെ ഐക്യത്തിലും, പാപങ്ങളുടെ മോചനത്തിലും, ശരീരത്തിന്റെ ഉയിർപ്പില
+        #selected-day-info { transition: opacity 0.3s ease-in-out; }
+        #daily-prayer-display { margin-top: 2rem; padding: 1.5rem; border: 1px solid #d1d5db; border-radius: 0.5rem; background-color: #f9fafb; }
+        #daily-prayer-display h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: #1e3a8a; text-align: center; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.5rem; }
+        #daily-prayer-display h4 { font-size: 1.05rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #111827; }
+        #daily-prayer-display h4:first-of-type { margin-top: 0.5rem; }
+        #daily-prayer-display p, #daily-prayer-display li { margin-bottom: 0.75rem; line-height: 1.6; color: #374151; }
+        #daily-prayer-display ol { list-style: none; padding-left: 0; counter-reset: decade-counter; }
+        #daily-prayer-display ol li { border-left: 3px solid #9ca3af; padding-left: 1rem; margin-bottom: 1.5rem; position: relative; }
+        #daily-prayer-display ol li::before { /* Decade numbering */
+            content: counter(decade-counter); counter-increment: decade-counter;
+            position: absolute; left: -0.75rem; top: 0;
+            background-color: #6b7280; color: white;
+            width: 1.5rem; height: 1.5rem; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem; font-weight: bold;
         }
+        #daily-prayer-display .mystery-title { font-weight: 600; color: #1e3a8a; display: block; margin-bottom: 0.25rem; }
+        #daily-prayer-display .mystery-description { font-size: 0.9rem; color: #4b5563; margin-bottom: 0.5rem; }
+        #daily-prayer-display .prayer-steps { font-size: 0.9rem; color: #6b7280; margin-bottom: 0.5rem; }
+        #daily-prayer-display .fatima-prayer { font-style: italic; color: #4b5563; margin-top: 0.5rem; padding-left: 1rem; border-left: 2px solid #fbbf24; font-size: 0.9em; }
+        #daily-prayer-display .closing-prayer { font-size: 0.9rem; color: #374151; background-color: #f3f4f6; padding: 0.5rem 0.75rem; border-radius: 0.25rem; border: 1px solid #e5e7eb; margin-top: 0.5rem; }
+        #daily-prayer-display .closing-prayer strong { font-weight: 600; color: #4b5563; }
+        .hidden { display: none; }
+        .final-prayer-section { margin-top: 1.5rem; padding: 1rem; border-radius: 0.375rem; }
+        /* Litany Styling within daily display */
+        .litany-section-inline { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed #d1d5db; }
+        .litany-list { list-style: none; padding-left: 0; margin-top: 0.5rem; }
+        .litany-list li { display: flex; justify-content: space-between; margin-bottom: 0.3rem; padding-right: 1rem; break-inside: avoid; }
+        .litany-list .response { font-style: italic; color: #4b5563; white-space: nowrap; margin-left: 1rem; }
+        .litany-list .lamb-of-god { display: block; margin-top: 1rem; }
+        .litany-list .lamb-of-god span { display: block; }
+        .litany-list .final-litany-prayer { margin-top: 1rem; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 p-4 md:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 rounded-lg shadow-md">
 
-        // --- Event Handler for Day Button Click ---
-        function handleDaySelection(event) {
-            const selectedButton = event.currentTarget;
-            const day = parseInt(selectedButton.dataset.day);
-            const mysteryIndex = parseInt(selectedButton.dataset.mysteryIndex);
-            const phase = selectedButton.dataset.phase;
-            const mysteryName = mysteryTypes[mysteryIndex];
-            const targetDetailsElement = mysteryElements[mysteryIndex];
-            const mysterySlug = mysterySlugs[mysteryIndex];
+        <h1 class="text-2xl md:text-3xl font-bold text-center text-blue-700 mb-6">
+            54 ദിവസത്തെ അത്ഭുതകരമായ ജപമാല നൊവേന
+        </h1>
 
-            // 1. Update Button Highlighting
-            const previouslySelected = dayNavigationSection.querySelector('.selected');
-            if (previouslySelected) {
-                previouslySelected.classList.remove('selected', 'bg-indigo-600', 'text-white', 'border-indigo-700');
-                 const prevMysteryIndex = parseInt(previouslySelected.dataset.mysteryIndex);
-                 const prevColor = mysteryColors[prevMysteryIndex];
-                 previouslySelected.classList.add(`bg-${prevColor}-50`, `text-${prevColor}-800`, `hover:bg-${prevColor}-100`, `border-${prevColor}-300`);
-            }
-             const currentColor = mysteryColors[mysteryIndex];
-             selectedButton.classList.remove(`bg-${currentColor}-50`, `text-${currentColor}-800`, `hover:bg-${currentColor}-100`, `border-${currentColor}-300`);
-             selectedButton.classList.add('selected', 'bg-indigo-600', 'text-white', 'border-indigo-700');
+        <section class="mb-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <h2 class="text-xl font-semibold text-blue-800 mb-3">നൊവേനയെക്കുറിച്ച്</h2>
+            <p class="mb-2">ഈ നൊവേന 54 ദിവസം തുടർച്ചയായി ജപമാല ചൊല്ലി പ്രാർത്ഥിക്കുന്നതാണ്. ഇത് രണ്ട് ഭാഗങ്ങളായി തിരിച്ചിരിക്കുന്നു:</p>
+            <ul class="list-disc list-inside mb-3 ml-4">
+                <li><strong>ആദ്യത്തെ 27 ദിവസം (അപേക്ഷ):</strong> ഒരു പ്രത്യേക നിയോഗത്തിനായി ജപമാല ചൊല്ലി പ്രാർത്ഥിക്കുന്നു.</li>
+                <li><strong>അടുത്ത 27 ദിവസം (കൃതജ്ഞത):</strong> അപേക്ഷ സാധിച്ചുകിട്ടിയാലും ഇല്ലെങ്കിലും നന്ദി പ്രകാശിപ്പിച്ച് ജപമാല ചൊല്ലി പ്രാർത്ഥിക്കുന്നു.</li>
+            </ul>
+             <p class="text-sm text-gray-600">“ആരൊക്കെ എന്നിൽ നിന്നും സഹായങ്ങൾ നേടുവാൻ ആഗ്രഹിക്കുന്നുവോ, അവർ ജപമാല പ്രാർത്ഥനകളുടെ 3 നൊവേനകൾ അപേക്ഷയായും 3 നൊവേനകൾ കൃതജ്ഞതയായും ചൊല്ലണം”. (എത്രയും പരിശുദ്ധ ജപമാല രാജ്ഞിയുടെ വാഗ്ദാനം).</p>
+             <p class="mt-2 text-sm">ഓരോ ദിവസവും സന്തോഷകരമായ, ദുഃഖകരമായ, മഹിമയുടെ ദിവ്യരഹസ്യങ്ങൾ മാറിമാറി വരും (ദിവസം 1: സന്തോഷം, ദിവസം 2: ദുഃഖം, ദിവസം 3: മഹിമ, ഇത് ആവർത്തിക്കുന്നു).</p>
+        </section>
 
-            // 2. Update Information Display
-            selectedDayInfo.textContent = `ദിവസം ${day}: ${mysteryName} (${phase})`;
-            selectedDayInfo.classList.remove('opacity-0');
+        <section id="day-navigation-section" class="mb-8 p-4 bg-indigo-50 rounded-lg border border-indigo-200">
+            <h2 class="text-xl font-semibold text-indigo-800 mb-4 text-center">ദിവസം തിരഞ്ഞെടുക്കുക</h2>
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-indigo-700 mb-3 text-center border-b border-indigo-200 pb-2">അപേക്ഷ (ദിവസം 1-27)</h3>
+                <div id="day-navigation-grid-petition" class="grid grid-cols-6 sm:grid-cols-9 md:grid-cols-9 gap-2"></div>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-indigo-700 mb-3 text-center border-b border-indigo-200 pb-2">കൃതജ്ഞത (ദിവസം 28-54)</h3>
+                <div id="day-navigation-grid-thanksgiving" class="grid grid-cols-6 sm:grid-cols-9 md:grid-cols-9 gap-2"></div>
+            </div>
+            <div id="selected-day-info" class="mt-6 p-3 bg-white rounded-md border border-indigo-300 text-center font-semibold text-indigo-900 opacity-0"></div>
+        </section>
 
-            // 3. Manage Collapsible Sections & Prayer Visibility
-            allMysteryDetails.forEach(details => {
-                const currentSlug = details.id.split('-')[0]; // e.g., 'joyful'
-                details.removeAttribute('open'); // Close main section
+        <div id="daily-prayer-display">
+            <p class="text-center text-gray-500">പ്രാർത്ഥന കാണുന്നതിന് മുകളിൽ നിന്ന് ഒരു ദിവസം തിരഞ്ഞെടുക്കുക.</p>
+        </div>
 
-                // Hide all prayer sections within it first
-                const introPetition = details.querySelector(`#${currentSlug}-intro-petition`);
-                const introThanksgiving = details.querySelector(`#${currentSlug}-intro-thanksgiving`);
-                const concludingPetition = details.querySelector(`#${currentSlug}-concluding-petition`);
-                const concludingThanksgiving = details.querySelector(`#${currentSlug}-concluding-thanksgiving`);
+         <section class="mt-10 p-4 bg-gray-100 rounded-lg border border-gray-300">
+            <h2 class="text-xl font-semibold text-gray-800 mb-3">നൊവേനയുടെ പൊതുവായ നിയോഗങ്ങൾ</h2>
+            <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>നമ്മുടെ രാജ്യമായ ഇന്ത്യയ്ക്കും ഇന്ത്യയിലെ എല്ലാ ജനങ്ങൾക്കും വേണ്ടി.</li>
+                <li>നമ്മുടേയും ലോകം മുഴുവനുമുള്ള എല്ലാവരുടേയും പാപങ്ങൾക്ക് പരിഹാരമായിട്ട്.</li>
+                <li>ശുദ്ധീകരണ സ്ഥലത്ത് സങ്കടമനുഭവിക്കുന്ന എല്ലാ ആത്മാക്കളുടേയും പാപങ്ങൾക്ക് പരിഹാരമായിട്ട്.</li>
+                <li>നമ്മുടെ വൈദീകർക്കും സന്ന്യസ്‌തർക്കും വേണ്ടി.</li>
+                <li>ജീവ-സംസ്ക്കാര മൂല്ല്യങ്ങളുടെ പുനരുദ്ധാരണത്തിനും ഗർഭപാത്രങ്ങളിലെ നിഷ്‌ക്കളങ്ക ജീവനുകളുടെ സംരക്ഷണത്തിനും.</li>
+                <li>വിവാഹത്തിൻ്റേയും കുടുംബജീവിതത്തിൻ്റേയും പരിശുദ്ധിക്ക്.</li>
+                <li>പരിശുദ്ധ കന്യകാമാതാവിൻ്റെ വിമലഹ്യദയത്തിൻ്റെ വിജയത്തിന്.</li>
+                <li>നിങ്ങളുടെ വ്യക്തിപരമായ നിയോഗങ്ങൾക്ക്, നിങ്ങളുടെ കുടുംബത്തിൻ്റെ നിയോഗങ്ങൾക്ക്.</li>
+             </ul>
+        </section>
 
-                if (introPetition) introPetition.classList.add('hidden');
-                if (introThanksgiving) introThanksgiving.classList.add('hidden');
-                if (concludingPetition) concludingPetition.classList.add('hidden');
-                if (concludingThanksgiving) concludingThanksgiving.classList.add('hidden');
-            });
+        <footer class="mt-10 text-center text-xs text-gray-500">
+            ഈ പ്രാർത്ഥന 54 ദിവസം മുടങ്ങാതെ ചൊല്ലുക. ദൈവാനുഗ്രഹം നേടുക.
+        </footer>
 
-            // Open the target main details section
-            if (targetDetailsElement) {
-                targetDetailsElement.setAttribute('open', '');
+    </div>
 
-                // Show the correct prayer sections based on the phase
-                if (day <= 27) {
-                    const introPetition = targetDetailsElement.querySelector(`#${mysterySlug}-intro-petition`);
-                    const concludingPetition = targetDetailsElement.querySelector(`#${mysterySlug}-concluding-petition`);
-                    if (introPetition) introPetition.classList.remove('hidden');
-                    if (concludingPetition) concludingPetition.classList.remove('hidden');
-                } else {
-                    const introThanksgiving = targetDetailsElement.querySelector(`#${mysterySlug}-intro-thanksgiving`);
-                    const concludingThanksgiving = targetDetailsElement.querySelector(`#${mysterySlug}-concluding-thanksgiving`);
-                    if (introThanksgiving) introThanksgiving.classList.remove('hidden');
-                    if (concludingThanksgiving) concludingThanksgiving.classList.remove('hidden');
-                }
-
-                // Scroll to the main section
-                 targetDetailsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-
-        // --- Initialize: Optionally open Day 1 on load ---
-        // Uncomment the line below to automatically select Day 1 when the page loads
-        // dayNavigationGridPetition.querySelector('button[data-day="1"]').click();
-
-    </script>
-</body>
-</html>
+    <div id="prayer-data" class="hidden">
+        <div data-key="generalIntro">അളവില്ലാത്ത സകല നന്മ സ്വരൂപനായിരിക്കുന്ന സർവ്വേശ്വരാ കർത്താവേ, നിസ്സാരരും നന്ദിയറ്റ പാപികളുമായ ഞങ്ങൾ നിസ്സീമപ്രതാപവാനായ അങ്ങേ സന്നിധിയിൽ പ്രാർത്ഥിക്കുവാൻ അയോഗ്യരാകുന്നു. എങ്കിലും അങ്ങേ അനന്തമായ ദയയിൽ ശരണപ്പെട്ടുകൊണ്ട്, പരിശുദ്ധ ദൈവമാതാവിൻ്റെ സ്തുതിക്കായി ജപമാലയർപ്പിക്കുവാൻ ഞങ്ങൾ ആഗ്രഹിക്കുന്നു. ഈ അർപ്പണം ഭക്തിയോടും ശ്രദ്ധയോടും കൂടെ ചെയ്യുന്നതിനു കർത്താവേ, ഞങ്ങളെ അനുഗ്രഹിക്കണമേ.</div>
+        <div data-key="creed">സർവ്വശക്തനായ പിതാവും ആകാശത്തിന്റെയും ഭൂമിയുടെയും സ്രഷ്ടാവുമായ ദൈവത്തിൽ ഞാൻ വിശ്വസിക്കുന്നു. അവിടുത്തെ ഏകപുത്രനും ഞങ്ങളുടെ കർത്താവുമായ ഈശോമിശിഹായിലും ഞാൻ വിശ്വസിക്കുന്നു. ഈ പുത്രൻ പരിശുദ്ധാത്മാവിനാൽ ഗർഭസ്ഥനായി, കന്യകാമറിയത്തിൽനിന്നു പിറന്നു, പന്തിയോസ് പീലാത്തോസിന്റെ കാലത്തു പീഡകൾ സഹിച്ചു, കുരിശിൽ തറയ്ക്കപ്പെട്ടു, മരിച്ചു, അടക്കപ്പെട്ടു, പാതാളങ്ങളിൽ ഇറങ്ങി, മരിച്ചവരുടെ ഇടയിൽനിന്നു മൂന്നാംനാൾ ഉയിർത്തു, സ്വർഗ്ഗത്തിലേക്കെഴുന്നള്ളി, സർവ്വശക്തിയുള്ള പിതാവായ ദൈവത്തിന്റെ വലത്തുഭാഗത്തിരിക്കുന്നു. അവിടെനിന്നു ജീവിക്കുന്നവരെയും മരിച്ചവരെയും വിധിക്കാൻ വരുമെന്നും ഞാൻ വിശ്വസിക്കുന്നു. പരിശുദ്ധാത്മാവിലും ഞാൻ വിശ്വസിക്കുന്നു. വിശുദ്ധ കത്തോലിക്കാസഭയിലും, പുണ്യവാന്മാരുടെ ഐക്യത്തിലും, പാപങ്ങളുടെ മോചനത്തിലും, ശരീരത്തിന്റെ ഉയിർപ്പില

@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
         /* Custom styles for enhanced UI */
         body {
             font-family: 'Noto Sans Malayalam', sans-serif; /* Using Malayalam font */
@@ -201,11 +202,11 @@
             border-radius: 0.25rem;
             border: 1px solid #e2e8f0;
             margin-top: 1rem; /* More space above closing prayer */
-        }
-        #daily-prayer-display .closing-prayer strong {
+         }
+         #daily-prayer-display .closing-prayer strong {
             font-weight: 600;
             color: #1e3a8a;
-        }
+         }
 
         .hidden { display: none; }
 
@@ -272,6 +273,12 @@
          .final-prayer-section p {
              margin-bottom: 0.75rem;
          }
+         /* Remove list styling for final prayers if needed */
+         .final-prayer-section > p {
+            /* If you want to remove any potential list markers from direct p children */
+             list-style: none;
+             padding-left: 0;
+         }
 
          /* Responsive Design Adjustments */
          @media (max-width: 640px) {
@@ -304,7 +311,7 @@
               .day-navigation-grid {
                  grid-template-columns: repeat(9, 1fr); /* 9 columns on medium screens */
              }
-          }
+         }
 
     </style>
 </head>
@@ -349,7 +356,7 @@
                     <i class="fas fa-pray mr-1"></i> അപേക്ഷ (ദിവസം 1-27)
                 </h3>
                 <div id="day-navigation-grid-petition" class="day-navigation-grid grid grid-cols-5 sm:grid-cols-7 md:grid-cols-9 gap-2 md:gap-3">
-                    </div>
+                     </div>
             </div>
 
             <div>
@@ -357,7 +364,7 @@
                    <i class="fas fa-hand-holding-heart mr-1"></i> കൃതജ്ഞത (ദിവസം 28-54)
                 </h3>
                 <div id="day-navigation-grid-thanksgiving" class="day-navigation-grid grid grid-cols-5 sm:grid-cols-7 md:grid-cols-9 gap-2 md:gap-3">
-                    </div>
+                     </div>
             </div>
 
              <div id="selected-day-info" class="mt-6 p-3 bg-white rounded-md border border-indigo-300 text-center font-semibold text-indigo-900 shadow-inner">
@@ -613,7 +620,7 @@
             html += `<p><strong>പ്രാരംഭ പ്രാർത്ഥന:</strong> ${getPrayerText('generalIntro')}</p>`;
             html += `<p><strong>നൊവേന ആമുഖ പ്രാർത്ഥന (${phaseKey === 'petition' ? 'അപേക്ഷ' : 'കൃതജ്ഞത'}):</strong> ${getPrayerText(`${mysterySlug}-intro-${phaseKey}`)}</p>`;
             html += `<p><strong>വിശ്വാസപ്രമാണം:</strong> ${getPrayerText('creed')}</p>`;
-            html += `<p><strong>1 സ്വർഗ്ഗസ്ഥനായ പിതാവേ...</strong></p>`;
+            html += `<p><strong>സ്വർഗ്ഗസ്ഥനായ പിതാവേ...</strong></p>`; // Removed numbering
             html += `<p><strong>3 നന്മ നിറഞ്ഞ മറിയമേ...</strong> (വിശ്വാസം <i class="fas fa-shield-alt text-gray-400 mx-1"></i>, ശരണം <i class="fas fa-anchor text-gray-400 mx-1"></i>, സ്നേഹം <i class="fas fa-heart text-gray-400 mx-1"></i> എന്നീ പുണ്യങ്ങൾക്കായി)</p>`;
             html += `<p><strong>ത്രിത്വ സ്തുതി:</strong> ${getPrayerText('gloryBe')}</p>`;
 
@@ -624,7 +631,8 @@
             mysteries.forEach((mystery, index) => {
                 // Add list item for each decade
                 html += `<li>`;
-                html += `<strong class="mystery-title">${index + 1}. ${mystery.title}</strong>`; // Add decade number
+                // Removed explicit numbering (index + 1) - CSS counter handles it
+                html += `<strong class="mystery-title">${mystery.title}</strong>`;
                 html += `<p class="mystery-description">${mystery.description}</p>`;
                 html += `<p class="prayer-steps"><em>(1 സ്വർഗ്ഗ..., 10 നന്മ..., 1 ത്രിത്വ...)</em></p>`;
                 html += `<p class="fatima-prayer">${getPrayerText('fatima')}</p>`;
@@ -636,18 +644,18 @@
             // Standard Closing Prayers (Wrapped in a styled section)
             html += `<div class="final-prayer-section">`;
             html += `<h4><i class="fas fa-flag-checkered mr-2"></i> സമാപനം</h4>`;
-            // Corrected order of closing prayers based on previous feedback
-            html += `<p><strong>1. ജപമാല സമർപ്പണം:</strong> ${getPrayerText('rosaryOffering')}</p>`;
-            // Litany included within its own styled div
-            html += `<div class="litany-section-inline"><h4>2. ദൈവമാതാവിൻ്റെ ലുത്തിനിയ</h4>${getPrayerText('litany')}</div>`;
-            html += `<p><strong>3. സർവ്വേശ്വരന്റെ പുണ്യപൂർണ്ണയായ...:</strong> ${getPrayerText('finalPrayer1')}</p>`;
-            html += `<p><strong>4. V/R പ്രാർത്ഥന:</strong> ${getPrayerText('finalPrayer2')}</p>`;
-            html += `<p><strong>5. പ്രാർത്ഥിക്കാം (കർത്താവേ...):</strong> ${getPrayerText('finalPrayer3')}</p>`;
-            html += `<p><strong>6. പരിശുദ്ധ രാജ്ഞീ...:</strong> ${getPrayerText('hailHolyQueen')}</p>`;
-            // Note: V/R prayer (finalPrayer2) is often repeated after Hail Holy Queen in some traditions, adding it again.
-            html += `<p><strong>7. V/R പ്രാർത്ഥന:</strong> ${getPrayerText('finalPrayer2')}</p>`;
-            html += `<p><strong>8. എത്രയും ദയയുള്ള മാതാവേ...:</strong> ${getPrayerText('memorare')}</p>`;
-            html += `<p><strong>9. നൊവേന സമാപന പ്രാർത്ഥന (${phaseKey === 'petition' ? 'അപേക്ഷ' : 'കൃതജ്ഞത'}):</strong> ${getPrayerText(`${mysterySlug}-concluding-${phaseKey}`)}</p>`;
+            // Removed numbering prefixes (e.g., "1.", "2.", "3.")
+            html += `<p><strong>ജപമാല സമർപ്പണം:</strong> ${getPrayerText('rosaryOffering')}</p>`;
+            // Litany included within its own styled div - Removed "2." prefix from heading
+            html += `<div class="litany-section-inline"><h4>ദൈവമാതാവിൻ്റെ ലുത്തിനിയ</h4>${getPrayerText('litany')}</div>`;
+            html += `<p><strong>സർവ്വേശ്വരന്റെ പുണ്യപൂർണ്ണയായ...:</strong> ${getPrayerText('finalPrayer1')}</p>`;
+            html += `<p><strong>പ്രാർത്ഥന:</strong> ${getPrayerText('finalPrayer2')}</p>`;
+            html += `<p><strong>പ്രാർത്ഥിക്കാം (കർത്താവേ...):</strong> ${getPrayerText('finalPrayer3')}</p>`;
+            html += `<p><strong>പരിശുദ്ധ രാജ്ഞീ...:</strong> ${getPrayerText('hailHolyQueen')}</p>`;
+            // Note: V/R prayer (finalPrayer2) is often repeated after Hail Holy Queen in some traditions, adding it again without numbering.
+            html += `<p><strong>പ്രാർത്ഥന:</strong> ${getPrayerText('finalPrayer2')}</p>`;
+            html += `<p><strong>എത്രയും ദയയുള്ള മാതാവേ...:</strong> ${getPrayerText('memorare')}</p>`;
+            html += `<p><strong>നൊവേന സമാപന പ്രാർത്ഥന (${phaseKey === 'petition' ? 'അപേക്ഷ' : 'കൃതജ്ഞത'}):</strong> ${getPrayerText(`${mysterySlug}-concluding-${phaseKey}`)}</p>`;
             html += `</div>`; // End final-prayer-section
 
             // Update the display area with the generated HTML
